@@ -20,6 +20,7 @@ En el presente informe se describen los resultados obtenidos al utilizar ROS 2 H
 ### Procedimiento realizado
 
 
+Se presenta el diagrama de flujo implementado:
 
 ```mermaid
 ---
@@ -76,6 +77,8 @@ flowchart TD
 
 
 ```
+
+### Movimiento libre
 ```mermaid
 ---
 config:
@@ -107,3 +110,14 @@ flowchart TD
     n11@{ shape: text}
     n12@{ shape: text}
     n15@{ shape: rounded}
+
+
+
+```
+
+
+### Dibujo de letras
+Se seleccionaron un total de 6 letras correspondientes a "J", "G", "R", "A", "S" y "B", las cuales fueron dibujadas mediante el desplazamiento de la tortuga. Este movimiento fue controlado mediante una combinación de funciones, donde linear.x regula la velocidad lineal, angular.z controla la velocidad angular y self.wait() maneja el tiempo de duración de los movimientos. La combinación de estos parámetros permitió que la tortuga dibujara formas que se asemejan a las letras objetivo.
+
+
+
