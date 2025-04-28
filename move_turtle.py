@@ -52,113 +52,290 @@ class ManualTurtleController(Node):
 
     def draw_g(self):
         self.get_logger().info("Dibujando la letra G.")
+          # Línea recta centri
         self.reset_position()
-    
-        # --- Hacer el círculo de 300 grados ---
-        msg = Twist()
-        msg.linear.x = 5.0    # Avanzar hacia adelante
-        msg.angular.z = 5.5   # Girar a la izquierda (antihorario)
-        self.publisher_.publish(msg)
-        time_to_turn = 2.0 # aprox
-        time.sleep(time_to_turn)
+
+        # Dibuja la letra G
         
-        # --- Parar el giro ---
-       
+       # Línea recta centri
+        msg = Twist()
+        msg.linear.x =4.5
         msg.angular.z = 0.0
+        self.publisher_.publish(msg)
+        time.sleep(0.8)
+
+        #Girar 90°
+        msg = Twist()
+        msg.linear.x = 0.0         
+        msg.angular.z = 1.57       
+
+        
+        self.publisher_.publish(msg)
+
+        
+        time.sleep(1.0)
+
+       #Semicirculo por partes
+        
+        msg = Twist()
+        msg.linear.x = -3.0
+        msg.angular.z = -1.0
         self.publisher_.publish(msg)
         time.sleep(1.0)
 
-        msg.angular.z = 1.0
+
+        msg = Twist()
+        msg.linear.x = -3.0
+        msg.angular.z = -1.0
         self.publisher_.publish(msg)
         time.sleep(1.0)
-        # --- Avanzar línea hacia la izquierda ---
-        # Como quedó mirando hacia la izquierda después del círculo,
-        # solo debe avanzar recto.
-        msg.linear.x = 1.0
+
+        msg = Twist()
+        msg.linear.x = -3.0
+        msg.angular.z = -1.0
         self.publisher_.publish(msg)
-        
-        # Avanzar un tiempo corto (ajusta si quieres más largo)
         time.sleep(1.0)
+
+        msg = Twist()
+        msg.linear.x = -3.0
+        msg.angular.z = -1.0
+        self.publisher_.publish(msg)
+        time.sleep(1.0)
+
+
+        msg = Twist()
+        msg.linear.x = -3.0
+        msg.angular.z = -1.0
+        self.publisher_.publish(msg)
+        time.sleep(1.0)
+
+
+        msg = Twist()
+        msg.linear.x = -1.5
+        msg.angular.z = -0.5
+        self.publisher_.publish(msg)
+        time.sleep(1.0)
+
         
+
+
+        # Detener movimiento
+        msg = Twist()
+        msg.linear.x = 0.0
+        msg.angular.z = 0.0
+        self.publisher_.publish(msg)
+
+        
+
+
+
         # --- Detenerse ---
         self.stop()
     def draw_r(self):
         self.get_logger().info("Dibujando la letra R.")
         self.reset_position()
         msg = Twist()
-        msg.linear.x = -1.0
+        # 1. Línea recta hacia arriba
+        msg.linear.x = 1.0  # velocidad hacia adelante
+        msg.angular.z = 0.0
         self.publisher_.publish(msg)
-        time.sleep(1)
-        msg.angular.z = -4.5
+        time.sleep(1.0)  # medio segundo aprox.
+
+        # 2. Semicircunferencia hacia atrás
+        
+        msg.linear.x = 2.5  # más lento para curva suave
+        msg.angular.z = -5.0  # velocidad angular positiva para curva izquierda
         self.publisher_.publish(msg)
-        time.sleep(1)
-        msg.linear.x = 2.0
+        time.sleep(1.5)  # ajustar tiempo para media vuelta
+
+        # 3. Línea inclinada a 45 grados hacia abajo a la izquierda
+       
+        msg.linear.x = -1.5
+        msg.angular.z = 0.0
         self.publisher_.publish(msg)
-        time.sleep(0.5)
-        msg.angular.z = -0.1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+        time.sleep(0.8)
+
+        # 4. Detener el movimiento
+        msg.linear.x = 0.0
+        msg.angular.z = 0.0
         self.publisher_.publish(msg)
-        time.sleep(0.25)
+        
+        
        
         self.stop()
 
     def draw_a(self):
         self.get_logger().info("Dibujando la letra A.")
         self.reset_position()
+        # Dibuja la letra A
+
+        #Girar 60°
         msg = Twist()
-        msg.linear.x = 1.0
+        msg.linear.x = 0.0         
+        msg.angular.z = -1.0472
         self.publisher_.publish(msg)
         time.sleep(1)
-        msg.angular.z = -1.0
+
+        msg = Twist()
+        msg.linear.x = 5.0
         self.publisher_.publish(msg)
         time.sleep(1)
-        msg.linear.x = 0.5
+
+         #Girar 
+        msg = Twist()
+        msg.linear.x = 0.0         
+        msg.angular.z = 2.0
         self.publisher_.publish(msg)
-        time.sleep(0.5)
-        msg.angular.z = 1.0
+        time.sleep(1)
+        
+        msg = Twist()
+        msg.linear.x = 5.0
         self.publisher_.publish(msg)
-        time.sleep(0.5)
+        time.sleep(1)
+
+        #Girar 180°
+        msg = Twist()
+        msg.linear.x = 0.0         
+        msg.angular.z = 3.1415926535897832384726
+        self.publisher_.publish(msg)
+        time.sleep(1)
+
+        msg = Twist()
+        msg.linear.x = 2.7
+        self.publisher_.publish(msg)
+        time.sleep(1)
+
+          #Girar 
+        msg = Twist()
+        msg.linear.x = 0.0         
+        msg.angular.z = 2.0
+        self.publisher_.publish(msg)
+        time.sleep(1)
+
+        #linea del medio
+
+        msg = Twist()
+        msg.linear.x = -2.7
+        self.publisher_.publish(msg)
+        time.sleep(1)
+
+
+         
+
+
+        # Detener el movimiento
+        msg.linear.x = 0.0
+        msg.angular.z = 0.0
+        self.publisher_.publish(msg)
+
         self.stop()
 
     def draw_s(self):
         self.get_logger().info("Dibujando la letra S.")
         self.reset_position()
+          # Dibuja la letra S
         msg = Twist()
-        msg.linear.x = 1.0
+        msg.linear.x = -6.0
+        msg.angular.z = 4.0
         self.publisher_.publish(msg)
-        time.sleep(1)
-        msg.angular.z = 1.0
+        time.sleep(1.0)
+
+       
+
+        #Giro
+        msg = Twist()
+        msg.linear.x = 0.0         
+        msg.angular.z = -2.1
         self.publisher_.publish(msg)
-        time.sleep(1)
-        msg.linear.x = -0.5
+        time.sleep(1.0)
+
+        #linea centro
+        msg = Twist()
+        msg.linear.x = 1.5
         self.publisher_.publish(msg)
-        time.sleep(0.5)
-        msg.angular.z = -1.0
+        time.sleep(1.0)
+
+        msg = Twist()
+        msg.linear.x = 6.2
+        msg.angular.z = -4.13
         self.publisher_.publish(msg)
-        time.sleep(1)
-        msg.linear.x = -0.5
+        time.sleep(1.0)
+
+        
+
+        # Detener el movimiento
+        msg.linear.x = 0.0
+        msg.angular.z = 0.0
         self.publisher_.publish(msg)
-        time.sleep(0.5)
+
         self.stop()
 
     def draw_b(self):
         self.get_logger().info("Dibujando la letra B.")
         self.reset_position()
+          # Dibuja la letra B
+        #linea 
         msg = Twist()
-        msg.linear.x = 1.0
+        msg.linear.x = 4.0
         self.publisher_.publish(msg)
-        time.sleep(1)
-        msg.angular.z = 1.0
+        time.sleep(1.0)
+
+        msg = Twist()
+        msg.linear.x = 6.0
+        msg.angular.z = -4.0
         self.publisher_.publish(msg)
-        time.sleep(1)
-        msg.linear.x = 0.5
+        time.sleep(1.0)
+
+        msg = Twist()
+        msg.linear.x = 0.0         
+        msg.angular.z = -0.8
         self.publisher_.publish(msg)
-        time.sleep(0.5)
-        msg.angular.z = -1.0
+        time.sleep(1.0)
+
+        #linea 
+        msg = Twist()
+        msg.linear.x = 2.3
         self.publisher_.publish(msg)
-        time.sleep(1)
-        msg.linear.x = 0.5
+        time.sleep(1.0)
+
+        #Giro
+        msg = Twist()
+        msg.linear.x = 0.0         
+        msg.angular.z = -3.14159265358979323846
         self.publisher_.publish(msg)
-        time.sleep(0.5)
+        time.sleep(1.0)
+
+        #linea 
+        msg = Twist()
+        msg.linear.x = 2.3
+        self.publisher_.publish(msg)
+        time.sleep(1.0)
+
+        msg = Twist()
+        msg.linear.x = 4.0
+        msg.angular.z = -2.66
+        self.publisher_.publish(msg)
+        time.sleep(1.0)
+
+        msg = Twist()
+        msg.linear.x = 0.0         
+        msg.angular.z = -0.41
+        self.publisher_.publish(msg)
+        time.sleep(1.0)
+
+        #linea 
+        msg = Twist()
+        msg.linear.x = 2.6
+        self.publisher_.publish(msg)
+        time.sleep(1.0)
+
+        
+
+        # Detener el movimiento
+        msg.linear.x = 0.0
+        msg.angular.z = 0.0
+        self.publisher_.publish(msg)
+
         self.stop()
 
     def stop(self):
