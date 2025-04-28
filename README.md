@@ -78,7 +78,10 @@ flowchart TD
 
 ```
 
-### Movimiento libre
+
+### Movimiento libre 
+
+Mediante una serie de condiciones basadas en la presión de las teclas correspondientes a las flechas del teclado, se busca obtener un control manual sobre la trayectoria seguida por la tortuga. Esta funcionalidad permite mover la tortuga en diferentes direcciones (arriba, abajo, izquierda, derecha) según las teclas presionadas, logrando un movimiento libre e interactivo.
 ```mermaid
 ---
 config:
@@ -114,6 +117,9 @@ flowchart TD
 
 
 ```
+```python
+def saludar():
+    print("Hola Mundo")
 
 
 ### Dibujo de letras
