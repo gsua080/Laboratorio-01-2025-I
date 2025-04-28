@@ -238,22 +238,62 @@ flowchart TD
 <p align="center">
   <img src="Images/Imagen_J.png" alt="Imagen de ejemplo" />
 </p>
-```mermaid
 
-``
+```mermaid
+---
+config:
+  theme: redux
+---
+flowchart TD
+    A(["Inicio-Dibujo J<br>"]) --> B["Avance de 1<br>"]
+    B --> D["Giro de -90° <br>"]
+    D --> n1["Avance de 1 <br>"]
+    n1 --> n2["Avance de 1 y Giro de -170°<br>"]
+    n2 --> n3["Fin"]
+    B@{ shape: rect}
+    n3@{ shape: rounded}
+
+```
 
 <p align="center">
   <img src="Images/Imagen_R.png" alt="Imagen de ejemplo" />
 </p>
-```mermaid
 
-``
+```mermaid
+---
+config:
+  theme: redux
+---
+flowchart TD
+    A(["Inicio-Dibujo R<br>"]) --> B["Avance de 1<br>"]
+    B --> D["Avance de 2.5 y Giro de -290°<br>"]
+    D --> n1["Avance de -1.5<br>"]
+    n1 --> n2["Untitled Node"]
+    B@{ shape: rect}
+    n2@{ shape: rounded}
+
+```
 
 <p align="center">
   <img src="Images/Imagen_S.png" alt="Imagen de ejemplo" />
 </p>
 
-....
+
+```mermaid
+---
+config:
+  theme: redux
+---
+flowchart TD
+    A(["Inicio-Dibujo S<br>"]) --> B["Avance de -6 y Giro de 230°<br>"]
+    B --> D["Giro de -120°<br>"]
+    D --> n1["Avance de 1.5<br>"]
+    n1 --> n2["Avance de 6.2 y Giro de -240°<br>"]
+    n2 --> n3["Fin <br>"]
+    B@{ shape: rect}
+
+```
+
 ### Criterios de diseño tomados para las letras
 
 
