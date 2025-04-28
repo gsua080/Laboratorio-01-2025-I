@@ -1,8 +1,8 @@
 # Laboratorio-01-2025-I
 #### Integrantes:
-Juliana Gongora Rassmusen
+Juliana Gongora Rasmussen
 
-correo:
+correo: jugongorar@unal.edu.co 
 
 Gerhaldine Alejandra Suárez Bernal
 
