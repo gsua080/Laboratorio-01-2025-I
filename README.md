@@ -87,7 +87,7 @@ flowchart TD
 ```
 
 
-### Movimiento libre 
+## Movimiento libre manual
 
 Mediante una serie de condiciones basadas en la presión de las teclas correspondientes a las flechas del teclado, se busca obtener un control manual sobre la trayectoria seguida por la tortuga. Esta funcionalidad permite mover la tortuga en diferentes direcciones (arriba, abajo, izquierda, derecha) según las teclas presionadas, logrando un movimiento libre e interactivo.
 ```mermaid
@@ -158,10 +158,42 @@ flowchart TD
 
 ```
 
+<p align="center">
+  <img src="Images/Movimiento_teclado.png" alt="Imagen de ejemplo" />
+</p>
 
+### Criterios de diseño tomados para el movimiento manual
 
-### Dibujo de letras
+## Dibujo de letras
 Se seleccionaron un total de 6 letras correspondientes a "J", "G", "R", "A", "S" y "B", las cuales fueron dibujadas mediante el desplazamiento de la tortuga. Este movimiento fue controlado mediante una combinación de funciones, donde linear.x regula la velocidad lineal, angular.z controla la velocidad angular y self.wait() maneja el tiempo de duración de los movimientos. La combinación de estos parámetros permitió que la tortuga dibujara formas que se asemejan a las letras objetivo.
+<p align="center">
+  <img src="Images/Imagen_A.png" alt="Imagen de ejemplo" />
+</p>
+
+<p align="center">
+  <img src="Images/Imagen_B.png" alt="Imagen de ejemplo" />
+</p>
+
+<p align="center">
+  <img src="Images/Imagen_G.png" alt="Imagen de ejemplo" />
+</p>
+
+<p align="center">
+  <img src="Images/Imagen_J.png" alt="Imagen de ejemplo" />
+</p>
+
+<p align="center">
+  <img src="Images/Imagen_R.png" alt="Imagen de ejemplo" />
+</p>
+
+<p align="center">
+  <img src="Images/Imagen_S.png" alt="Imagen de ejemplo" />
+</p>
+
+....
+### Criterios de diseño tomados para las letras
+
+
 
 
 
