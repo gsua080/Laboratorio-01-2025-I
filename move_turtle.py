@@ -57,15 +57,20 @@ class ManualTurtleController(Node):
         # --- Hacer el círculo de 300 grados ---
         msg = Twist()
         msg.linear.x = 5.0    # Avanzar hacia adelante
-        msg.angular.z = 4.0   # Girar a la izquierda (antihorario)
+        msg.angular.z = 5.5   # Girar a la izquierda (antihorario)
         self.publisher_.publish(msg)
-        time_to_turn = 5.0 # aprox 5.236 segundos
+        time_to_turn = 2.0 # aprox
         time.sleep(time_to_turn)
         
         # --- Parar el giro ---
-        msg.angular.z = -1.0
+       
+        msg.angular.z = 0.0
         self.publisher_.publish(msg)
+        time.sleep(1.0)
 
+        msg.angular.z = 1.0
+        self.publisher_.publish(msg)
+        time.sleep(1.0)
         # --- Avanzar línea hacia la izquierda ---
         # Como quedó mirando hacia la izquierda después del círculo,
         # solo debe avanzar recto.
@@ -81,21 +86,19 @@ class ManualTurtleController(Node):
         self.get_logger().info("Dibujando la letra R.")
         self.reset_position()
         msg = Twist()
-        msg.linear.x = 1.0
+        msg.linear.x = -1.0
         self.publisher_.publish(msg)
         time.sleep(1)
-        msg.angular.z = 1.0
+        msg.angular.z = -4.5
         self.publisher_.publish(msg)
         time.sleep(1)
-        msg.linear.x = 0.5
+        msg.linear.x = 2.0
         self.publisher_.publish(msg)
         time.sleep(0.5)
-        msg.angular.z = -1.0
+        msg.angular.z = -0.1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         self.publisher_.publish(msg)
-        time.sleep(0.5)
-        msg.linear.x = 0.5
-        self.publisher_.publish(msg)
-        time.sleep(0.5)
+        time.sleep(0.25)
+       
         self.stop()
 
     def draw_a(self):
@@ -132,7 +135,7 @@ class ManualTurtleController(Node):
         msg.angular.z = -1.0
         self.publisher_.publish(msg)
         time.sleep(1)
-        msg.linear.x = 0.5
+        msg.linear.x = -0.5
         self.publisher_.publish(msg)
         time.sleep(0.5)
         self.stop()
