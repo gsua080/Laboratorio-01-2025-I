@@ -91,6 +91,7 @@ flowchart TD
 
 Mediante una serie de condiciones basadas en la presión de las teclas correspondientes a las flechas del teclado, se busca obtener un control manual sobre la trayectoria seguida por la tortuga. Esta funcionalidad permite mover la tortuga en diferentes direcciones (arriba, abajo, izquierda, derecha) según las teclas presionadas, logrando un movimiento libre e interactivo.
 ```mermaid
+
 ---
 config:
   theme: redux
@@ -166,25 +167,87 @@ flowchart TD
 
 ## Dibujo de letras
 Se seleccionaron un total de 6 letras correspondientes a "J", "G", "R", "A", "S" y "B", las cuales fueron dibujadas mediante el desplazamiento de la tortuga. Este movimiento fue controlado mediante una combinación de funciones, donde linear.x regula la velocidad lineal, angular.z controla la velocidad angular y self.wait() maneja el tiempo de duración de los movimientos. La combinación de estos parámetros permitió que la tortuga dibujara formas que se asemejan a las letras objetivo.
+```mermaid
+
+```
+
+---
 <p align="center">
   <img src="Images/Imagen_A.png" alt="Imagen de ejemplo" />
 </p>
+
+```mermaid
+flowchart TD
+    A(["Inicio - Dibujo A"]) --> B["Giro de 60°"]
+    B --> D["Avance de 5"]
+    D --> n1["Giro de 115°"]
+    n1 --> n2["Giro de 180°"]
+    n2 --> n3["Avance de 2.7"]
+    n3 --> n4["Giro de 115°"]
+    n4 --> n5["Avance -2.7"]
+    n5 --> n6(["Fin"])
+```
 
 <p align="center">
   <img src="Images/Imagen_B.png" alt="Imagen de ejemplo" />
 </p>
 
+```mermaid
+flowchart TD
+    A(["Inicio - Dibujo B"]) --> B["Avance de 4"]
+    B --> D["Avance de 6 y Giro de -230°"]
+    D --> n1["Giro de -45°"]
+    n1 --> n2["Avance de 2.3"]
+    n2 --> n3["Giro de 180°"]
+    n3 --> n4["Avance de 2.3"]
+    n4 --> n5["Avance de 4 y Giro de -150°"]
+    n5 --> n6["Giro de -25°"]
+    n6 --> n7["Avance de 2.6"]
+    n7 --> n8(["Fin"])
+```
+
 <p align="center">
   <img src="Images/Imagen_G.png" alt="Imagen de ejemplo" />
 </p>
 
+```mermaid
+---
+config:
+  theme: redux
+---
+flowchart TD
+    A(["Inicio-dibujo G<br>"]) --> B["Avance de 4.5<br>"]
+    B --> C["Giro de 90°<br>"]
+    C --> n1["Avance de -3.0 y Giro de 57°<br>"]
+    n1 --> n2@{ label: "<span style=\"padding-left:\">Avance de -3.0 y Giro de 57°</span>" }
+    n2 --> n3@{ label: "<span style=\"padding-left:\">Avance de -3.0 y Giro de 57°</span>" }
+    n3 --> n4@{ label: "<span style=\"padding-left:\">Avance de -3.0 y Giro de 57°</span>" }
+    n4 --> n5@{ label: "<span style=\"padding-left:\">Avance de -3.0 y Giro de 57°</span>" }
+    n5 --> n6@{ label: "<span style=\"padding-left:\">Avance de -1.5 y Giro de 29°</span>" }
+    n6 --> n7["Fin"]
+    B@{ shape: rect}
+    n2@{ shape: rect}
+    n3@{ shape: rect}
+    n4@{ shape: rect}
+    n5@{ shape: rect}
+    n6@{ shape: rect}
+    n7@{ shape: rounded}
+
+```
+
 <p align="center">
   <img src="Images/Imagen_J.png" alt="Imagen de ejemplo" />
 </p>
+```mermaid
+
+``
 
 <p align="center">
   <img src="Images/Imagen_R.png" alt="Imagen de ejemplo" />
 </p>
+```mermaid
+
+``
 
 <p align="center">
   <img src="Images/Imagen_S.png" alt="Imagen de ejemplo" />
