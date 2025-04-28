@@ -38,20 +38,23 @@ flowchart TD
     n5 --> n8["tecla == G?<br>"]
     n8 --> n9["Si"] & n10["No"]
     n9 --> n11["Dibujar G<br>"]
-    n10 --> n12["tecla R?<br>"]
+    n10 --> n12["tecla==R?<br>"]
     n12 --> n13["si"] & n14["No <br>"]
-    n14 --> n15["tecla A? <br>"]
+    n14 --> n15["tecla==A? <br>"]
     n13 --> n16["Dibujar R <br>"]
     n15 --> n17["No <br>"] & n18["Si <br>"]
-    n17 --> n19["tecla S? <br>"]
+    n17 --> n19["tecla==S? <br>"]
     n18 --> n20["Dibujar A <br>"]
     n19 --> n21["No <br>"] & n22["Si <br>"]
     n22 --> n23["Dibujar S <br>"]
-    n21 --> n24["tecla b?<br>"]
+    n21 --> n24["tecla==b?<br>"]
     n24 --> n25["No <br>"] & n26["Si"]
     n26 --> n27["Dibujar B <br>"]
-    n27 --> B
     n4 --> B
+    n25 --> n28["tecla ==q?<br>"]
+    n28 --> n29["No <br>"] & n30["Si <br>"]
+    n29 --> B
+    n30 --> n31["Salir"]
     B@{ shape: rect}
     D@{ shape: diam}
     n1@{ shape: text}
@@ -74,6 +77,11 @@ flowchart TD
     n24@{ shape: diam}
     n25@{ shape: text}
     n26@{ shape: text}
+    n28@{ shape: diam}
+    n29@{ shape: text}
+    n30@{ shape: text}
+    n31@{ shape: rounded}
+
 
 
 ```
@@ -118,8 +126,38 @@ flowchart TD
 
 ```
 ```python
-def saludar():
-    print("Hola Mundo")
+
+        while True:
+            key = stdscr.getch()
+
+            if key == ord('q'):
+                self.get_logger().info('Saliendo del control manual')
+                break
+
+            # Flechas para movimiento manual
+            if key == curses.KEY_UP:
+                msg.linear.x = float(self.speed)
+                msg.angular.z = 0.0
+                last_key = curses.KEY_UP
+            elif key == curses.KEY_DOWN:
+                msg.linear.x = float(-self.speed)
+                msg.angular.z = 0.0
+                last_key = curses.KEY_DOWN
+            elif key == curses.KEY_LEFT:
+                msg.linear.x = 0.0
+                msg.angular.z = float(self.angular_speed)
+                last_key = curses.KEY_LEFT
+            elif key == curses.KEY_RIGHT:
+                msg.linear.x = 0.0
+                msg.angular.z = float(-self.angular_speed)
+                last_key = curses.KEY_RIGHT
+
+```
+```python
+
+
+```
+
 
 
 ### Dibujo de letras
