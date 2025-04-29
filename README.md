@@ -295,6 +295,33 @@ flowchart TD
 ```
 
 ### Criterios de diseño tomados para las letras
+#### Consideraciones para el dibujo de letras
+
+## Consideraciones para el dibujo de letras
+
+Para diseñar las letras utilizando la trayectoria de la tortuga, se aprovechó la relación entre la velocidad lineal (`linear.x`) y la velocidad angular (`angular.z`).  
+Esta relación permite definir el radio de giro de la tortuga mediante la siguiente fórmula:
+
+$$
+\text{radio} = \frac{\text{linear.x}}{\text{angular.z}}
+$$
+
+De esta manera:
+
+- **El radio** del giro se controla ajustando la proporción entre `linear.x` y `angular.z`.
+- Un radio mayor genera trayectorias más abiertas, permitiendo formar curvas más amplias.
+- **La longitud** del arco recorrido depende tanto del radio como del tiempo durante el cual se mantiene el movimiento.
+- A medida que aumenta la duración del movimiento a velocidad constante, se puede completar una mayor parte de un círculo (hasta alcanzar los \(2\pi\) radianes, es decir, una vuelta completa).
+
+Además, en situaciones donde era necesario **retomar una trayectoria recta** después de un trazo (por ejemplo, tras dibujar una curva o cambiar de dirección en una letra), se utilizaba un **giro de 180°** (es decir, media vuelta) para alinear nuevamente la tortuga en la dirección deseada.
+
+Esto permitía:
+
+- Corregir la orientación de la tortuga de forma precisa.
+- Continuar el dibujo de forma controlada sin distorsionar las formas de las letras.
+
+
+
 
 
 
